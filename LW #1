@@ -1,0 +1,136 @@
+// Задание 1
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    float gallons, cufeet;
+    cout <<"Enter quantity in gallons: ";
+    cin >> gallons;
+    cufeet = gallons / 7.481;
+    cout <<"Equivalent in cublic feet is " << cufeet << endl;
+    return 0;
+}
+
+// Задание 2
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    cout << 1990 << setw(8) << 135 << endl
+    << 1991 << setw(8) << 7290 << endl
+    << 1992 << setw(8) << 11300 << endl
+    << 1993 << setw(8) << 16200 << endl;
+    return 0;
+}
+
+// Задание 3
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int var = 10;
+    cout << var << endl; // var is 10
+    var *= 2; // var becomes 20
+    cout << var-- << endl; // displays var, then decrements it
+    cout << var << endl; // var is 19    
+    return 0;
+}
+
+// Задание 4
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    cout << "Молчи, скрывайся и таи\nИ чувства и мечты свои –\nПускай в душевной глубине\nВстают и заходят оне\nБезмолвно, как звезды в ночи, –\nЛюбуйся ими – и молчи." << endl;
+    return 0;
+}
+
+// Задание 5
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    char letter;
+    cin >> letter;
+    int letter_sign = islower(letter);
+    cout << letter_sign << endl;
+    return 0;
+}
+
+// Задание 6
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    float dollars;
+    cin >> dollars;
+    float pound = 1/1.487 * dollars, frank = 1/0.172 * dollars;
+    float mark = 1/0.584 * dollars, yen = 1/0.00955 * dollars;
+    cout << pound << "  " << frank << "  "<< mark << "  "<< yen << endl;
+    return 0;
+}
+// Задание 7
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    int c;
+    cin >> c;
+    cout << c << " degrees Celsius";
+    float f = c*9/5 + 32;
+    cout << " are " << f << " degrees Fahrenheit" << endl;
+    return 0;
+}
+
+// Задание 8
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    cout << setfill('.') << 1990 << setw(8) << 135 << endl
+    << 1991 << setw(8) << 7290 << endl
+    << 1992 << setw(8) << 11300 << endl
+    << 1993 << setw(8) << 16200 << endl;
+    return 0;
+}
+
+// Задание 9
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int a, b, c, d;
+    char slash;
+    
+    cout << "Введите первую дробь: ";
+    cin >> a >> slash >> b;
+    cout << "Введите вторую дробь: ";
+    cin >> c >> slash >> d;
+    
+    int num = a*d + b*c, den = b*d;
+    cout << "Сумма равна: " << num << slash << den;
+    return 0;
+}
+
