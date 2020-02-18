@@ -134,3 +134,56 @@ int main()
     return 0;
 }
 
+// Задание 10
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int pound, shilling, penny;
+    
+    cout << "Введите количество фунтов: ";
+    cin >> pound;
+    cout << "Введите количество шиллингов: ";
+    cin >> shilling;
+    cout << "Введите количество шиллингов: ";
+    cin >> penny;
+    
+    penny = (12.0 * shilling + penny) / 2.4;
+    cout << "Десятичных фунтов: " << pound << "." << penny;
+    return 0;
+}
+
+// Задание 11
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    cout << setiosflags(ios::left) << setw(20) << "Фамилия" << setw(17) << "Имя" << setw(21) << "Адрес" << setw(20) << "Город" << endl
+    << setw(18) << "Петров" << setw(19) << "Василий" << setw(23) << "Кленовая 16" << setw(20) << "Санкт-Петербург" << endl
+    << setw(18) << "Иванов" << setw(18) << "Сергей" << setw(23) << "Осиновая 3" << setw(20) << "Находка" << endl
+    << setw(19) << "Сидоров" << setw(16) << "Иван" << setw(24) << "Берёзовая 21" << setw(20) << "Калининград" << endl;
+    return 0;
+}
+
+// Задание 12
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int pound, shilling, penny;
+    char point;
+    
+    cout << "Введите количество десятичных фунтов: ";
+    cin >> pound >> point >> penny;
+    
+    shilling = int(penny*2.4/12);
+    penny = int(penny*2.4)%12;
+    cout << "Десятичных фунтов: " << pound << "." << shilling << "." << penny;
+    return 0;
+}
