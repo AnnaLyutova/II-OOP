@@ -184,6 +184,6 @@ int main()
     
     shilling = int(penny*2.4/12);
     penny = int(penny*2.4)%12;
-    cout << "Десятичных фунтов: " << pound << "." << shilling << "." << penny;
+    cout << "В старой денежной системе это: " << pound << "." << shilling << "." << penny;
     return 0;
 }
