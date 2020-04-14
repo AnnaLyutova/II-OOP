@@ -1,0 +1,138 @@
+// Задание 1
+
+#include <iostream>
+#include <iomanip>                     
+using namespace std;
+
+int main()
+   {
+   unsigned long n;                    
+ 
+   cout << "\nEnter a number: ";
+   cin >> n;                           
+
+   for(int j=1; j<=200; j++)      
+      {
+      cout << setw(5) << j*n << "  "; 
+      if( j%10 == 0 ){                  
+         cout << endl;          
+      }
+
+   return 0;
+   }
+   
+// Задание 2
+ 
+#include <iostream>
+using namespace std;
+
+int main()
+   {
+   int response;
+   double temper;
+ 
+   cout << "\nType 1 to convert fahrenheit to celsius,"
+
+        << "\n     2 to convert celsius to fahrenheit: ";
+   cin >> response;
+
+   if( response == 1 )
+      {
+      cout << "Enter temperature in fahrenheit: ";
+      cin >> temper;
+      cout << "In celsius that's " << 5.0/9.0*(temper-32.0);
+      }
+
+   else
+      {
+      cout << "Enter temperature in celsius: ";
+      cin >> temper;
+      cout << "In fahrenheit that's " << 9.0/5.0*temper + 32.0;
+      }
+
+   cout << endl;
+   return 0;
+
+   }
+   
+// Задание 3
+  
+#include <iostream>
+using namespace std;
+#include <conio.h>              
+
+int main()
+   {
+
+   char ch;                   
+   unsigned long total = 0;     
+
+   cout << "\nEnter a number: ";
+
+   while( (ch=getche()) != '\r' ){   
+
+      total = total*10 + ch-'0';   
+      }
+
+   cout << "\nNumber is: " << total << endl;
+
+   return 0;
+
+   }
+   
+// Задание 4
+
+#include <iostream>
+using namespace std;
+
+int main()
+   {
+
+   double n1, n2, ans;
+   char oper, ch;
+
+   do {
+      cout << "\nEnter first number, operator, second number: ";
+      cin >> n1 >> oper >> n2;
+      
+      switch(oper)
+         {
+         case '+':  ans = n1 + n2;  break;
+         case '-':  ans = n1 - n2;  break;
+         case '*':  ans = n1 * n2;  break;
+         case '/':  ans = n1 / n2;  break;
+         default:   ans = 0;
+         }
+
+      cout << "Answer = " << ans;
+      cout << "\nDo another (Enter 'y' or 'n')? ";
+
+      cin >> ch;
+
+      } while( ch != 'n' );
+
+   return 0;
+
+   }
+  
+ // Задание 5
+ 
+ #include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+   {
+
+   string s = "X";
+   int i;
+
+   for(i=0; i<5; i++){
+       cout << setiosflags(ios::right) << s << endl;
+       s += string(2, 'X');
+   }
+
+   return 0;
+
+   }
+   
