@@ -115,9 +115,9 @@ int main()
 
    }
   
- // Задание 5
+// Задание 5
  
- #include <iostream>
+#include <iostream>
 #include <iomanip>
 using namespace std;
 
@@ -127,7 +127,7 @@ int main()
    string s = "X";
    int i;
 
-   for(i=0; i<5; i++){
+   for(i=0; i<20; i++){
        cout << setiosflags(ios::right) << s << endl;
        s += string(2, 'X');
    }
@@ -135,4 +135,142 @@ int main()
    return 0;
 
    }
+
+// Задание 6
+
+#include <iostream>
+using namespace std;
+ 
+int main()
+   {
+
+   unsigned int numb, j;               
+   unsigned long fact;
    
+   cout << "[To finish program enter 0.] \n" << endl;
+   
+   do{
+        fact = 1;
+        cout << "Enter a number: ";
+        cin >> numb;   
+        for(int j=numb; j>0; j--){
+            fact *= j;     
+        }
+        cout << "Factorial is " << fact << "\n" << endl;
+   } while (numb != 0);
+   
+   cout << "Program is over!" << endl;
+   
+   return 0;
+   }
+   
+// Задание 7
+
+#include <iostream>
+using namespace std;
+ 
+int main(){
+
+   int i, years;
+   float deposit, rate;               
+   
+   cout << "Enter initial deposit: ";
+   cin >> deposit;
+   cout << "Enter the number of years: ";
+   cin >> years;
+   cout << "Enter interest rate: ";
+   cin >> rate;
+   
+   for (i=0; i < years; i++){
+       deposit += deposit * rate / 100;
+   }
+   
+   cout << "In 10 years you will receive " << deposit << " dollars." << endl;
+   
+   return 0;
+   }
+   
+// Задание 8
+
+#include <iostream>
+using namespace std;
+ 
+int main(){
+
+   int po, sh, pe, po2, sh2, pe2;
+   char point;
+   string answ = "y";            
+   
+   do{
+       cout << "Enter the first amount: £";
+       cin >> po >> point >> sh >> point >> pe;
+       cout << "Enter the second amount: £";
+       cin >> po2 >> point >> sh2 >> point >> pe2;
+   
+       sh = sh + sh2 + (pe + pe2) / 12;
+       po = po + po2 +  sh / 20;
+       pe = (pe + pe2) % 12;
+      
+       cout << "Total £" << po << point << sh << point << pe << endl;
+       cout << "\nContinue (y / n)? ";  
+       cin >> answ;
+       cout << endl;
+       
+   } while (answ != "n");
+   
+   cout << "Program is over!" << endl;
+   return 0;
+   }
+   
+// Задание 9
+
+#include <iostream>
+using namespace std;
+ 
+int main(){
+
+   int guests, seats, result = 1, i;
+   
+   cout << "Enter the number of guests: ";
+   cin >> guests;
+   cout << "Enter the number of seats at the table: ";
+   cin >> seats;
+   
+   for (i=0; i<seats; i++){
+       result *= guests;
+       guests -= 1;
+   }
+   
+   cout << "Seating guests get " << result << " options." << endl;
+   
+   return 0;
+   }
+   
+// Задание 10
+
+#include <iostream>
+using namespace std;
+ 
+int main(){
+
+   int i, years;
+   float i_deposit, deposit, rate;               
+   
+   cout << "Enter initial deposit: ";
+   cin >> i_deposit;
+   cout << "Enter interest rate: ";
+   cin >> rate;
+   cout << "Enter the final amount: ";
+   cin >> deposit;
+   
+   while (deposit > i_deposit){
+       deposit -= deposit * rate / 100;
+       years += 1;
+   }
+   
+   cout << "You'll need " << years << " years." << endl;
+   
+   return 0;
+   }
+   
+// Задание 11
