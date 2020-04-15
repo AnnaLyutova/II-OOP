@@ -207,7 +207,7 @@ int main(){
        cout << "Enter the second amount: £";
        cin >> po2 >> point >> sh2 >> point >> pe2;
    
-       sh = sh + sh2 + (pe + pe2) / 12;
+       sh = (sh + sh2 + (pe + pe2) / 12) % 20;
        po = po + po2 +  sh / 20;
        pe = (pe + pe2) % 12;
       
