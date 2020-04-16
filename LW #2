@@ -207,9 +207,11 @@ int main(){
        cout << "Enter the second amount: £";
        cin >> po2 >> point >> sh2 >> point >> pe2;
    
-       sh = (sh + sh2 + (pe + pe2) / 12) % 20;
-       po = po + po2 +  sh / 20;
-       pe = (pe + pe2) % 12;
+       pe += pe2 ;
+       sh += sh2 + pe/12;
+       po += po2 + sh/20;
+       sh %= 20;
+       pe %= 12;
       
        cout << "Total £" << po << point << sh << point << pe << endl;
        cout << "\nContinue (y / n)? ";  
@@ -274,3 +276,124 @@ int main(){
    }
    
 // Задание 11
+
+#include <iostream>
+using namespace std;
+
+int special_devide(int x, int y){
+    if (x == y) return 0;
+    else return x/y;
+}
+
+int main()
+   {
+
+    int po, sh, pe, po2, sh2, pe2, num;
+    char oper, ans, point;
+
+    do {
+        cout << "Enter the first amount: £";
+        cin >> po >> point >> sh >> point >> pe; 
+        
+        cout << "Enter operator (+/-/*): ";
+        cin >> oper; 
+        
+        if (oper == '*'){
+            cout << "Enter the factor (number): ";
+            cin >> num; 
+        }
+        else{
+            cout << "Enter the second amount: £";
+            cin >> po2 >> point >> sh2 >> point >> pe2;
+        }
+      
+      switch(oper)
+        {
+        case '+':  
+            pe += pe2;
+            sh += sh2 + pe/12;
+            po += po2 + sh/20;
+            sh %= 20;
+            pe %= 12; 
+            break;
+        case '-':  
+            pe -= pe2;
+            sh = sh - sh2 - special_devide((12-pe),12);
+            po = po - po2 - special_devide((20-sh),20);
+            sh = (sh + 20)%20;
+            pe = (pe + 12)%12; 
+            break;
+        case '*':  
+            pe *= num;
+            sh = sh * num + pe/12;
+            po = po * num + sh/20;
+            sh %= 20;
+            pe %= 12;
+            break;
+        default:   
+            cout << "Incorrect operator or value!" << endl;
+            break;
+         }
+
+      cout << "Total £" << po << point << sh << point << pe << endl;
+      cout << "\nContinue? (y/n) ";
+      cin >> ans;
+      cout << endl;
+
+      } while( ans != 'n' );
+
+   cout << "Program is over!" << endl;
+   return 0;
+   }
+   
+// Задание 12
+   
+#include <iostream>
+using namespace std;
+
+int main()
+   {
+
+    int a, b, c, d, num, den;
+    char oper, ans, slash;
+    cout << "[ The Fraction Calculator! |+|-|*|/| ]\n" << endl;
+
+    do {
+        cout << "Enter the first fraction, operator and the second fraction (ex. 1/3+2/7): ";
+        cin >> a >> slash >> b >> oper >> c >> slash >> d; 
+      
+        switch(oper)
+        {
+        case '+':  
+            num = a*d + b*c;
+            den = b*d;
+            break;
+        case '-':  
+            num = a*d - b*c;
+            den = b*d;
+            break;
+        case '*':  
+            num = a*c;
+            den = b*d;
+            break;
+        case '/':  
+            num = a*d;
+            den = b*c;
+            break;
+        default:   
+            cout << "Incorrect operator or value!" << endl;
+            break;
+         }
+
+      cout << "Result: " << num << slash << den << endl;
+      cout << "\nContinue? (y/n) ";
+      cin >> ans;
+      cout << endl;
+
+      } while( ans != 'n' );
+
+   cout << "Program is over!" << endl;
+   return 0;
+   }
+  
+  
